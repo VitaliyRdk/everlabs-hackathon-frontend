@@ -1,0 +1,1 @@
+# everlabs-hackathon-frontend

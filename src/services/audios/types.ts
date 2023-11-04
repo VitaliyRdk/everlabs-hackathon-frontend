@@ -3,8 +3,8 @@ export type AudiosByFolderIdResponse = {
   title: string
   createdAt: string
   updatedAt: string
-}
+}[]
 
 export type AudiosByFolderIdParams = {
-  folder_id: number
+  folder_id: number | null
 }

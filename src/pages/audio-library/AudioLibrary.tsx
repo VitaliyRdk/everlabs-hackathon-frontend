@@ -38,8 +38,8 @@ const AudioLibrary = () => {
     <div>
       <PageTitle>Audio Library</PageTitle>
       <Tabs activeTab={activeTab} handleOnClick={handleOnClick} data={data} />
-      {audios.map((audio) => {
-        return <div>{audio.title}</div>
+      {audios.map((audio, index) => {
+        return <div key={index}>{audio.title}</div>
       })}
       <GenerateAudioWrapper>
         <TextField

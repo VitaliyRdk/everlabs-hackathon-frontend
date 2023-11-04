@@ -10,7 +10,7 @@ export const audiosApi = api.injectEndpoints({
       query: ({ folder_id }) => ({
         url: "audios",
         method: "GET",
-        params: { folder_id }
+        params: { folder_id },
       }),
     }),
   }),

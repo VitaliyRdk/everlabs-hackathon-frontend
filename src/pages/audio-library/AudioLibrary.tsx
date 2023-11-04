@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { GenerateAudioWrapper, PageTitle } from "./styles"
 import { OutlinedInput, Select, TextField } from "@mui/material"
 import { useGetFolderListQuery } from "../../services/folders/foldersSlice"
-import Tabs from "../../components/tabs/Tabs";
+import Tabs from "../../components/tabs/Tabs"
 
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8

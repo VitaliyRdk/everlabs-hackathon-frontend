@@ -2,6 +2,7 @@ import { styled } from "@mui/material"
 
 export const TabsContainer = styled("div")`
   display: flex;
+  align-items: center;
   border-bottom: 1px solid #e3e3e3;
   width: 100%;
   margin-bottom: 40px;
@@ -23,4 +24,18 @@ export const Tab = styled("div")<{ active: boolean }>`
     color: #2a2a2a;
     cursor: pointer;
   }
+`
+
+export const CreateButton = styled("button")`
+  background: unset;
+  margin: 0 0 0 auto;
+  width: 119px;
+  height: 32px;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem;
+  color: #6a28ea;
+  border: 1px solid #6a28ea;
+  border-radius: 40px;
 `

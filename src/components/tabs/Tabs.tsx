@@ -11,7 +11,6 @@ const Tabs = ({ data }: any) => {
   return (
     <TabsContainer>
       {data.map((item: any) => {
-        debugger
         return (
           <Tab
             active={activeTab === item.id}

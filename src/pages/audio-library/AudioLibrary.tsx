@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { GenerateAudioWrapper, PageTitle } from "./styles"
 import { OutlinedInput, Select, TextField } from "@mui/material"
 import { useGetFolderListQuery } from "../../services/folders/foldersSlice"
+import Tabs from "../../components/tabs/Tabs";
 
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8
@@ -18,10 +19,13 @@ const MenuProps = {
 const AudioLibrary = () => {
   const { data, isLoading } = useGetFolderListQuery()
   const textInputRef = useRef()
-  debugger
+
+  if (!data) return null
+
   return (
     <div>
       <PageTitle>Audio Library</PageTitle>
+      <Tabs data={data} />
       <GenerateAudioWrapper>
         <TextField
           fullWidth

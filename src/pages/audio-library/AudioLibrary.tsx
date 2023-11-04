@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import { GenerateAudioWrapper, PageTitle } from "./styles"
 import { OutlinedInput, Select, TextField } from "@mui/material"
 import { useGetFolderListQuery } from "../../services/folders/foldersSlice"
 import Tabs from "../../components/tabs/Tabs"
 import { useGetAudiosByFolderIdQuery } from "../../services/audios/audiosSlice"
+import AudioCards from "../../components/audio-cards/AudioCards"
 
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8
@@ -18,7 +19,7 @@ const MenuProps = {
 }
 
 const AudioLibrary = () => {
-  const [activeTab, setActiveTab] = useState(null)
+  const [activeTab, setActiveTab] = useState("all")
   const { data, isLoading } = useGetFolderListQuery()
   const { data: audios } = useGetAudiosByFolderIdQuery({ folder_id: activeTab })
   const textInputRef = useRef()
@@ -26,21 +27,11 @@ const AudioLibrary = () => {
     setActiveTab(tab)
   }
 
-  useEffect(() => {
-    if (data) {
-      setActiveTab(data[0].id)
-    }
-  }, [data])
-
   if (!data || !audios) return null
 
   return (
     <div>
       <PageTitle>Audio Library</PageTitle>
-      <Tabs activeTab={activeTab} handleOnClick={handleOnClick} data={data} />
-      {audios.map((audio, index) => {
-        return <div key={index}>{audio.title}</div>
-      })}
       <GenerateAudioWrapper>
         <TextField
           fullWidth
@@ -79,6 +70,8 @@ const AudioLibrary = () => {
         {/*  ))}*/}
         {/*</Select>*/}
       </GenerateAudioWrapper>
+      <Tabs activeTab={activeTab} handleOnClick={handleOnClick} data={data} />
+      <AudioCards audios={audios} />
     </div>
   )
 }

@@ -4,6 +4,9 @@ import { CreateButton, Tab, TabsContainer } from "./styles"
 const Tabs = ({ data, handleOnClick, activeTab }: any) => {
   return (
     <TabsContainer>
+      <Tab active={activeTab === "all"} onClick={() => handleOnClick("all")}>
+        All audios
+      </Tab>
       {data.map((item: any) => {
         return (
           <Tab

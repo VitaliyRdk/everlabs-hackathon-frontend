@@ -5,6 +5,7 @@ import {
   AudioCardContentContainer,
   AudioCardContentDescription,
   AudioCardContentFolder,
+  AudioCardContentFolderIcon,
   AudioCardContentTitle,
   AudioCardPlayAudio,
   AudioCardsContainer,
@@ -29,8 +30,8 @@ const AudioCards = ({ audios }: any) => {
               </AudioCardContentDescription>
             </AudioCardContentContainer>
             <AudioCardContentFolder>
-              <img src={FolderIcon} />
-              {item.folder_id}
+              <AudioCardContentFolderIcon src={FolderIcon} />
+              {item.folder.name}
             </AudioCardContentFolder>
           </AudioCard>
         )

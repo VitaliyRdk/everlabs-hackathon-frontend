@@ -35,6 +35,9 @@ export const AudioCardContentTitle = styled("a")`
   font-weight: 500;
   line-height: 1.125rem;
   text-decoration-line: underline;
+  &:hover {
+    color: #380798;
+  }
 `
 
 export const AudioCardContentDescription = styled("div")`
@@ -49,8 +52,11 @@ export const AudioCardContentFolder = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 97px;
-  min-height: 28px;
   color: #2a2a2a;
   background: #f9f9f9;
+  padding: 4px 8px;
+`
+
+export const AudioCardContentFolderIcon = styled("img")`
+  margin-right: 8px;
 `

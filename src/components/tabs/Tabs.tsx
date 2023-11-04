@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Tab, TabsContainer } from "./styles";
+import React, { useState } from "react"
+import { Tab, TabsContainer } from "./styles"
 
 const Tabs = ({ data }: any) => {
   const [activeTab, setActiveTab] = useState(data[0].id)

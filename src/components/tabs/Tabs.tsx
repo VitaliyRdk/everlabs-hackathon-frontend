@@ -1,13 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { CreateButton, Tab, TabsContainer } from "./styles"
 
-const Tabs = ({ data }: any) => {
-  const [activeTab, setActiveTab] = useState(data[0].id)
-  debugger
-  const handleOnClick = (tab) => {
-    setActiveTab(tab)
-  }
-
+const Tabs = ({ data, handleOnClick, activeTab }: any) => {
   return (
     <TabsContainer>
       {data.map((item: any) => {

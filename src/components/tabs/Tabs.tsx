@@ -11,17 +11,18 @@ const Tabs = ({ data, handleOnClick, activeTab, handleCreateFolder }: any) => {
         <Tab active={activeTab === "all"} onClick={() => handleOnClick("all")}>
           All audios
         </Tab>
-        {data.map((item: any) => {
-          return (
-            <Tab
-              active={activeTab === item.id}
-              key={`tab-${item.id}`}
-              onClick={() => handleOnClick(item.id)}
-            >
-              {item.name} ({item.audios_count})
-            </Tab>
-          )
-        })}
+        {data.map(
+          (item: any) =>
+            item.audios_count > 0 && (
+              <Tab
+                active={activeTab === item.id}
+                key={`tab-${item.id}`}
+                onClick={() => handleOnClick(item.id)}
+              >
+                {item.name} ({item.audios_count})
+              </Tab>
+            ),
+        )}
       </ScrollableContainer>
       <CreateButton onClick={() => setOpen(true)}>Create folder</CreateButton>
       {open && (

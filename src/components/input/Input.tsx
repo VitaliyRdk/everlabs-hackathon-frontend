@@ -46,6 +46,7 @@ const Input = ({
           </InputIconWrapper>
         )}
         <StyledInput
+          disabled={disabled}
           error={Boolean(error)}
           id={id}
           name={name}
@@ -55,7 +56,6 @@ const Input = ({
           onBlur={() => setIsHovered(false)}
           onChange={onChange}
           placeholder={placeholder}
-          disabled={disabled}
         />
         {withCountOfSymbols && (
           <InputSymbolsCount>{value.length}/100</InputSymbolsCount>

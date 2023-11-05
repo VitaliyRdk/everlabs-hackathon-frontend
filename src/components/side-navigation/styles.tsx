@@ -15,8 +15,10 @@ export const SidebarContainer = styled("div")`
 `
 
 export const Logo = styled("img")`
-  width: 100%;
-  margin-bottom: 24px;
+  display: block;
+  margin: 0 auto 24px auto;
+  max-width: 118px;
+  height: 52px;
 `
 
 export const StyledNavLinkWrapper = styled(NavLink)(() => ({

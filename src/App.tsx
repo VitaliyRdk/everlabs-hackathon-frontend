@@ -5,15 +5,23 @@ import theme from "./config/theme/theme"
 import { BrowserRouter } from "react-router-dom"
 import React from "react"
 import Layout from "./components/layout/Layout"
+import { SnackbarProvider } from "notistack"
+
+const SnackbarProviderProps = {
+  autoHideDuration: 5000,
+  maxSnack: 5,
+}
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Layout />
-          <div id="app-modal"/>
+          <SnackbarProvider {...SnackbarProviderProps}>
+            <CssBaseline />
+            <Layout />
+            <div id="app-modal" />
+          </SnackbarProvider>
         </ThemeProvider>
       </BrowserRouter>
     </Provider>

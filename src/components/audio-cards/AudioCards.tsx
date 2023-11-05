@@ -12,10 +12,18 @@ import {
 } from "./styles"
 import PlayAudioIcon from "../../assets/icons/play-audio.svg"
 import FolderIcon from "../../assets/icons/folder.svg"
+import { AudiosByFolderIdResponse } from "../../services/audios/types"
+import AudioCardSkeleton from "../skeleton-loader/audio-card-skeleton/AudioCardSkeleton"
 
-const AudioCards = ({ audios }: any) => {
+type AudioCardsProps = {
+  audios: AudiosByFolderIdResponse
+  isGenerating?: boolean
+}
+
+const AudioCards = ({ isGenerating, audios }: AudioCardsProps) => {
   return (
     <AudioCardsContainer>
+      {isGenerating && <AudioCardSkeleton />}
       {audios.map((item: any, index: number) => {
         return (
           <AudioCard key={index}>

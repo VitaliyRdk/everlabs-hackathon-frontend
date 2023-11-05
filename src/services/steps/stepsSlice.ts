@@ -7,10 +7,10 @@ export const stepsApi = api.injectEndpoints({
       GenerateAudioStepResponse,
       GenerateAudioStepParams
     >({
-      query: ({ content, language_short_name }) => ({
+      query: ({ language_short_name }) => ({
         url: "steps",
         method: "GET",
-        params: { content, language_short_name },
+        params: { language_short_name },
       }),
     }),
   }),

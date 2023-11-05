@@ -61,7 +61,6 @@ const CurriculumSection = () => {
           onClick={() =>
             generateStepAudio({
               language_short_name: selectedLanguage,
-              content: JSON.stringify(curriculumContentMock),
             })
           }
         />

@@ -1,11 +1,11 @@
 import { Provider } from "react-redux"
 import { store } from "./app/store"
 import { CssBaseline, ThemeProvider } from "@mui/material"
-import theme from "./config/theme/theme"
 import { BrowserRouter } from "react-router-dom"
 import React from "react"
 import Layout from "./components/layout/Layout"
 import { SnackbarProvider } from "notistack"
+import { theme } from "./config/theme"
 
 const SnackbarProviderProps = {
   autoHideDuration: 5000,

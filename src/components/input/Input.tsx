@@ -58,7 +58,7 @@ const Input = ({
           placeholder={placeholder}
         />
         {withCountOfSymbols && (
-          <InputSymbolsCount>{value.length}/100</InputSymbolsCount>
+          <InputSymbolsCount>{value.length}/150</InputSymbolsCount>
         )}
       </InputMainWrapper>
       {error && (

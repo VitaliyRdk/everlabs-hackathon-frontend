@@ -8,6 +8,7 @@ import { useGetAudiosByFolderIdQuery } from "../../services/audios/audiosSlice"
 import Tabs from "../../components/tabs/Tabs"
 import AudioCards from "../../components/audio-cards/AudioCards"
 import GenerateAudio from "../../components/generate-audio/GenerateAudio"
+import AudioCardSkeleton from "../../components/skeleton-loader/audio-card-skeleton/AudioCardSkeleton"
 
 const AudioLibrary = () => {
   const { data, isLoading } = useGetFolderListQuery()
@@ -37,6 +38,7 @@ const AudioLibrary = () => {
         data={data}
       />
       <AudioCards audios={audios} />
+      <AudioCardSkeleton />
     </div>
   )
 }

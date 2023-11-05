@@ -30,7 +30,7 @@ export const ModalFooter = styled("div")`
   justify-content: flex-end;
 `
 
-export const ConfirmButton = styled("button")<{ primary: boolean }>`
+export const ConfirmButton = styled("button")<{ primary?: boolean }>`
   background: ${({ primary }) => (primary ? "#6A28EA" : "unset")};
   color: ${({ primary }) => (primary ? "#fff" : "#6a28ea")};
   font-size: 0.875rem;

@@ -5,7 +5,7 @@ const BASE_URL =
 
 export const api = createApi({
   reducerPath: "api",
-  tagTypes: ["Audios"],
+  tagTypes: ["Audios", "Folders"],
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   keepUnusedDataFor: Number("10"),
   endpoints: () => ({}),

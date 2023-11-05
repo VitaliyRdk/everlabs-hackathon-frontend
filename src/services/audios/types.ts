@@ -1,10 +1,10 @@
-import { FoldersListResponce } from "../folders/types"
+import { FoldersListResponse } from "../folders/types"
 
 export type AudiosByFolderIdResponse = {
   id: number
   title: string
   link: string
-  folder: FoldersListResponce
+  folder: FoldersListResponse
   src: string
   created_at: string
   updated_at: string

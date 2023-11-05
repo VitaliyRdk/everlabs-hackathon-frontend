@@ -78,7 +78,7 @@ export const SubjectStepsTitle = styled("h3")`
   padding: 4px 24px;
 `
 
-export const SubjectStepContainer = styled("div")<{ active: boolean }>`
+export const SubjectStepContainer = styled("div")<{ active?: boolean }>`
   background: ${({ active }) => (active ? "#f1f1f1" : "unset")};
   color: ${({ active }) => (active ? "#6A28EA" : "2A2A2A")};
   width: 100%;

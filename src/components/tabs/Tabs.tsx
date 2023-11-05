@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { CreateButton, ScrollableContainer, Tab, TabsContainer } from "./styles";
+import { CreateButton, ScrollableContainer, Tab, TabsContainer } from "./styles"
 import { ModalContainer } from "../react-portal/ReactPortal"
 
 const Tabs = ({ data, handleOnClick, activeTab, handleCreateFolder }: any) => {
@@ -18,7 +18,7 @@ const Tabs = ({ data, handleOnClick, activeTab, handleCreateFolder }: any) => {
               key={`tab-${item.id}`}
               onClick={() => handleOnClick(item.id)}
             >
-              {item.name}
+              {item.name} ({item.audios_count})
             </Tab>
           )
         })}

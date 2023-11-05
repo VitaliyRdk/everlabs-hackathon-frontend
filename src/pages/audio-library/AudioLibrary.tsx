@@ -10,14 +10,18 @@ import AudioCards from "../../components/audio-cards/AudioCards"
 import GenerateAudio from "../../components/generate-audio/GenerateAudio"
 
 const AudioLibrary = () => {
-  const { data, isLoading } = useGetFolderListQuery()
+  const { data: foldersData, isFoldersDataLoading } = useGetFolderListQuery()
   const [activeTab, setActiveTab] = useState("all")
-  const { data: audios } = useGetAudiosByFolderIdQuery({ folder_id: activeTab })
+  const { data: audiosData, isAudiosDataLoading } = useGetAudiosByFolderIdQuery(
+    {
+      folder_id: activeTab,
+    },
+  )
   const [createFolder] = useCreateFolderMutation()
-  const [isGenerating, setIsGenerating] = useState(null)
+  const [isGenerating, setIsGenerating] = useState(false)
 
-  if (!data || !audios) return null
-  if (isLoading) return <div>Loading...</div>
+  if (!foldersData || !audiosData) return null
+  if (isFoldersDataLoading || isAudiosDataLoading) return <div>Loading...</div>
 
   const handleOnClick = (tab) => {
     setActiveTab(tab)
@@ -30,14 +34,14 @@ const AudioLibrary = () => {
   return (
     <div>
       <PageTitle>Audio Library</PageTitle>
-      <GenerateAudio data={data} setIsGenerating={setIsGenerating} />
+      <GenerateAudio data={foldersData} setIsGenerating={setIsGenerating} />
       <Tabs
         activeTab={activeTab}
         handleOnClick={handleOnClick}
         handleCreateFolder={handleCreateFolder}
-        data={data}
+        data={foldersData}
       />
-      <AudioCards isGenerating={isGenerating} audios={audios} />
+      <AudioCards isGenerating={isGenerating} audios={audiosData} />
     </div>
   )
 }

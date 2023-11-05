@@ -38,4 +38,14 @@ export const CreateButton = styled("button")`
   color: #6a28ea;
   border: 1px solid #6a28ea;
   border-radius: 40px;
+  cursor: pointer;
+`
+
+export const ScrollableContainer = styled("div")`
+  display: flex;
+  overflow-x: auto;
+  width: calc(100% - 10rem);
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `

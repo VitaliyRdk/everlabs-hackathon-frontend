@@ -13,6 +13,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Layout />
+          <div id="app-modal"/>
         </ThemeProvider>
       </BrowserRouter>
     </Provider>

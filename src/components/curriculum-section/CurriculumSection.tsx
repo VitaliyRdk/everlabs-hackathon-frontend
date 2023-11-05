@@ -25,9 +25,11 @@ const CurriculumSection = () => {
   const { error, data, reset } = result
   const [selectedLanguage, setSelectedLanguage] =
     useState<LanguageShortName>("en")
+  const [isActiveAudio, setIsActiveAudio] = useState(false)
 
   const onChangeLanguage = (event: SelectChangeEvent<any>) => {
     reset()
+    setIsActiveAudio(false)
     setSelectedLanguage(event.target.value)
   }
 
@@ -50,6 +52,8 @@ const CurriculumSection = () => {
         </CurriculumStepTitleContainer>
 
         <CurriculumSplitButton
+          isActiveAudio={isActiveAudio}
+          setIsActiveAudio={setIsActiveAudio}
           isLoading={result.isLoading}
           src={data?.src}
           language={selectedLanguage}

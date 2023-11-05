@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { Dispatch, SetStateAction, useRef } from "react"
 import { LanguageShortName } from "../../services/steps/types"
 import {
   StyledCurriculumAudioCardPlayAudio,
@@ -12,22 +12,25 @@ import PauseAudioIcon from "../../assets/icons/pause-audio.svg"
 import PlayAudioIcon from "../../assets/icons/play-audio.svg"
 
 type CurriculumSplitButtonProps = {
+  isActiveAudio: boolean
   isLoading?: boolean
   src: string | undefined
   language: LanguageShortName
   onClick: () => void
   onChangeLanguage: (event: SelectChangeEvent<any>) => void
+  setIsActiveAudio: Dispatch<SetStateAction<boolean>>
 }
 
 const CurriculumSplitButton = ({
+  isActiveAudio,
   src,
   onClick,
   onChangeLanguage,
   language,
   isLoading,
+  setIsActiveAudio,
 }: CurriculumSplitButtonProps) => {
   const audioRef = useRef(null)
-  const [isActiveAudio, setIsActiveAudio] = useState(false)
 
   const handleClickOnPlayAudio = () => {
     audioRef.current.play()

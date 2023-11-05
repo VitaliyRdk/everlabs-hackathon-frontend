@@ -13,3 +13,12 @@ export type AudiosByFolderIdResponse = {
 export type AudiosByFolderIdParams = {
   folder_id: number | string
 }
+
+export type GenerateAudioByLinkResponse = {
+  link: string
+}
+
+export type GenerateAudioByLinkParams = {
+  link: string
+  folder_id: string
+}

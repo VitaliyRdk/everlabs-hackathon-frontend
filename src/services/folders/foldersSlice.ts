@@ -1,9 +1,9 @@
 import { api } from "../api/api"
-import { FoldersListResponce } from "./types"
+import { FoldersListResponse } from "./types"
 
 export const foldersApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getFolderList: builder.query<FoldersListResponce, void>({
+    getFolderList: builder.query<FoldersListResponse, void>({
       query: () => ({
         url: "folders",
         method: "GET",

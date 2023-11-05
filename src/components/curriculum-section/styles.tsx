@@ -4,13 +4,19 @@ export const CurriculumText = styled("p")`
   font-size: 16px;
   white-space: break-spaces;
   font-weight: 500;
-  margin: 16px 0 0 0;
 `
 
 export const CurriculumTitleWrapper = styled("div")`
   display: flex;
   align-items: center;
 `
+export const CurriculumStepTitleWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+`
+
 export const CurriculumEmoji = styled("img")`
   margin-right: 16px;
 `
@@ -50,4 +56,10 @@ export const CurriculumSectionWrapper = styled("div")`
   padding: 24px 40px 32px 40px;
   border-radius: 16px;
   box-shadow: 1px 2px 12px 0 rgba(0, 0, 0, 0.15);
+`
+
+export const CurriculumStepTitleContainer = styled("div")`
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
 `

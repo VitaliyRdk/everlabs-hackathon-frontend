@@ -1,16 +1,25 @@
 import React from "react"
 import { StyledButton } from "./styles"
+import { CircularProgress } from "@mui/material"
 
 type ButtonProps = {
   text: string
   onClick: () => void
   disabled?: boolean
+  className?: string
+  loading?: boolean
 }
 
-const Button = ({ onClick, text, disabled = false }: ButtonProps) => {
+const Button = ({
+  className = "",
+  onClick,
+  text,
+  disabled = false,
+  loading = false,
+}: ButtonProps) => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled}>
-      {text}
+    <StyledButton className={className} onClick={onClick} disabled={disabled}>
+      {loading ? <CircularProgress size={"1rem"} /> : text}
     </StyledButton>
   )
 }

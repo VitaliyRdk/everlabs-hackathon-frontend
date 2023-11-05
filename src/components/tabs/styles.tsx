@@ -11,7 +11,7 @@ export const TabsContainer = styled("div")`
 export const Tab = styled("div")<{ active: boolean }>`
   display: flex;
   justify-content: center;
-  min-width: 130px;
+  min-width: fit-content;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;

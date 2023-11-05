@@ -15,9 +15,9 @@ import FolderIcon from "../../assets/icons/folder.svg"
 const AudioCards = ({ audios }: any) => {
   return (
     <AudioCardsContainer>
-      {audios.map((item: any) => {
+      {audios.map((item: any, index: number) => {
         return (
-          <AudioCard>
+          <AudioCard key={index}>
             <AudioCardPlayAudio src={PlayAudioIcon} alt="Play audio" />
             <AudioCardContentContainer>
               <AudioCardContentTitle href={item.link} target="_blank">

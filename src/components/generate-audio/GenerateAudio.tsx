@@ -93,7 +93,7 @@ const GenerateAudio = ({ data, setIsGenerating }: GenerateAudioProps) => {
       </Select>
       <Button
         disabled={isLoading}
-        text="Generate audio"
+        text="Generate audio summary"
         onClick={handleSubmit}
       />
     </GenerateAudioWrapper>

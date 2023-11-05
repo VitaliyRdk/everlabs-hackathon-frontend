@@ -55,6 +55,7 @@ export const AudioCardContentFolder = styled("div")`
   color: #2a2a2a;
   background: #f9f9f9;
   padding: 4px 8px;
+  border-radius: 4px;
 `
 
 export const AudioCardContentFolderIcon = styled("img")`

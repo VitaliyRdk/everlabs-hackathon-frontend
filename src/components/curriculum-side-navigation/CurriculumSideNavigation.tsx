@@ -42,7 +42,7 @@ const CurriculumSideNavigation = () => {
       </SubjectScoreContainer>
       <SubjectAudioSummary controls>
         <source
-          src="https://storage.googleapis.com/hackaton-trainual/employee_handbook_manual_and_template_for_small_businesses.mp3"
+          src="https://storage.googleapis.com/hackaton-trainual/maximizing_eos_accountability_chart.mp3"
           type="audio/mpeg"
         />
         Your browser does not support the audio element.

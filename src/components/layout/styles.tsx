@@ -16,6 +16,7 @@ export const LayoutContentWrapper = styled("div")<{
     isAudioLibraryPage ? SIDEBAR_WIDTH : CURRICULUM_SIDEBAR_WIDTH};
   padding: 24px;
   min-height: 100vh;
+  ${(isAudioLibraryPage) => isAudioLibraryPage && `background: #f9f9f9;`};
 `
 
 export const MainContentWrapper = styled("div")`

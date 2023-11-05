@@ -8,8 +8,8 @@ import {
 } from "./styles"
 import AudioLibrary from "../../pages/audio-library/AudioLibrary"
 import NotFound from "../../pages/not-found/NotFound"
-import Curriculum from "../../pages/curriculum/Curriculum"
 import CurriculumSideNavigation from "../curriculum-side-navigation/CurriculumSideNavigation"
+import CurriculumSection from "../curriculum-section/CurriculumSection"
 
 const Layout = () => {
   const location = useLocation()
@@ -22,7 +22,7 @@ const Layout = () => {
         <MainContentWrapper>
           <Routes>
             <Route path="/" element={<AudioLibrary />} />
-            <Route path="/curriculum" element={<Curriculum />} />
+            <Route path="/curriculum" element={<CurriculumSection />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </MainContentWrapper>

@@ -73,7 +73,7 @@ const GenerateAudio = ({ data, setIsGenerating }: GenerateAudioProps) => {
         value={values.link}
         fullWidth
         onChange={handleChange}
-        placeholder={"Insert a link from a website"}
+        placeholder={"Insert a link to another website's content"}
       />
       <Select
         disabled={isLoading}

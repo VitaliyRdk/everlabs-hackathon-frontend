@@ -1,8 +1,8 @@
 import { styled } from "@mui/material"
-import { AudioCard } from "../../audio-cards/styles"
 import Lottie from "lottie-react"
+import { AudioCardWrapper } from "../../audio-card/styles"
 
-export const AudioCardSkeletonWrapper = styled(AudioCard)`
+export const AudioCardSkeletonWrapper = styled(AudioCardWrapper)`
   display: flex;
   flex-direction: row;
 `

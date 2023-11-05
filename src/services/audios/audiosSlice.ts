@@ -28,7 +28,7 @@ export const audiosApi = api.injectEndpoints({
         method: "POST",
         params: { link, folder_id },
       }),
-      invalidatesTags: () => [{ type: "Audios" }],
+      invalidatesTags: () => [{ type: "Audios" }, { type: "Folders" }],
     }),
   }),
   overrideExisting: false,

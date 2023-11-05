@@ -17,6 +17,7 @@ export const audiosApi = api.injectEndpoints({
         method: "GET",
         params: { folder_id },
       }),
+      providesTags: () => [{ type: "Audios" }],
     }),
     generateAudioByLink: builder.mutation<
       GenerateAudioByLinkResponse,
@@ -27,6 +28,7 @@ export const audiosApi = api.injectEndpoints({
         method: "POST",
         params: { link, folder_id },
       }),
+      invalidatesTags: () => [{ type: "Audios" }],
     }),
   }),
   overrideExisting: false,

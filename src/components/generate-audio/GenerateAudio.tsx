@@ -27,6 +27,14 @@ const GenerateAudio = ({ data }: GenerateAudioProps) => {
     setLink(event.target.value)
   }
 
+  const handleClickOnGenerateAudio = () => {
+    generateAudioByLink({
+      link,
+      folder_id: selectedFolder,
+    })
+    setLink("")
+  }
+
   return (
     <GenerateAudioWrapper>
       <Input
@@ -48,15 +56,7 @@ const GenerateAudio = ({ data }: GenerateAudioProps) => {
           </StyledSelectItem>
         ))}
       </Select>
-      <Button
-        text="Generate audio"
-        onClick={() =>
-          generateAudioByLink({
-            link,
-            folder_id: selectedFolder,
-          })
-        }
-      />
+      <Button text="Generate audio" onClick={handleClickOnGenerateAudio} />
     </GenerateAudioWrapper>
   )
 }

@@ -31,7 +31,7 @@ type FormValues = {
 const GenerateAudio = ({ data, setIsGenerating }: GenerateAudioProps) => {
   const [generateAudioByLink, result] = useGenerateAudioByLinkMutation()
   const { isLoading, error } = result
-  const [selectedFolder, setSelectedFolder] = useState<string>(data[0].id)
+  const [selectedFolder, setSelectedFolder] = useState<string>("all")
   const { errors, values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       link: "",
@@ -80,15 +80,16 @@ const GenerateAudio = ({ data, setIsGenerating }: GenerateAudioProps) => {
         value={selectedFolder}
         onChange={handleChangeFolder}
       >
-        {data.map(({ name, id }) => (
-          <StyledSelectItem
-            value={id}
-            key={id}
-            selected={id === selectedFolder}
-          >
-            {name}
-          </StyledSelectItem>
-        ))}
+        {data &&
+          data.map(({ name, id }) => (
+            <StyledSelectItem
+              value={id}
+              key={id}
+              selected={id === selectedFolder}
+            >
+              {name}
+            </StyledSelectItem>
+          ))}
       </Select>
       <Button
         disabled={isLoading}

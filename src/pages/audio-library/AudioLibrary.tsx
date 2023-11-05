@@ -20,7 +20,7 @@ const AudioLibrary = () => {
   const [createFolder] = useCreateFolderMutation()
   const [isGenerating, setIsGenerating] = useState(false)
 
-  if (!foldersData || !audiosData) return null
+  if (!audiosData) return null
   if (isFoldersDataLoading || isAudiosDataLoading) return <div>Loading...</div>
 
   const handleOnClick = (tab) => {

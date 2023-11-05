@@ -31,7 +31,7 @@ type FormValues = {
 const GenerateAudio = ({ data, setIsGenerating }: GenerateAudioProps) => {
   const [generateAudioByLink, result] = useGenerateAudioByLinkMutation()
   const { isLoading, error } = result
-  const [selectedFolder, setSelectedFolder] = useState<string>("all")
+  const [selectedFolder, setSelectedFolder] = useState<string>(data?.[0]?.id)
   const { errors, values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       link: "",

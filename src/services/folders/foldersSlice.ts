@@ -1,6 +1,5 @@
 import { api } from "../api/api"
-import { FoldersListResponse } from "./types"
-import { CreateFolderParams } from "../openAi/types"
+import { CreateFolderParams, FoldersListResponse } from "./types"
 
 export const foldersApi = api.injectEndpoints({
   endpoints: (builder) => ({

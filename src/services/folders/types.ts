@@ -3,3 +3,7 @@ export type FoldersListResponse = {
   name: string
   audios_count: number
 }[]
+
+export type CreateFolderParams = {
+  name: string
+}

@@ -10,13 +10,13 @@ import AudioCards from "../../components/audio-cards/AudioCards"
 import GenerateAudio from "../../components/generate-audio/GenerateAudio"
 
 const AudioLibrary = () => {
-  const { data: foldersData, isFoldersDataLoading } = useGetFolderListQuery()
+  const { data: foldersData, isLoading: isFoldersDataLoading } =
+    useGetFolderListQuery()
   const [activeTab, setActiveTab] = useState("all")
-  const { data: audiosData, isAudiosDataLoading } = useGetAudiosByFolderIdQuery(
-    {
+  const { data: audiosData, isLoading: isAudiosDataLoading } =
+    useGetAudiosByFolderIdQuery({
       folder_id: activeTab,
-    },
-  )
+    })
   const [createFolder] = useCreateFolderMutation()
   const [isGenerating, setIsGenerating] = useState(false)
 
